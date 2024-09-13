@@ -6,3 +6,5 @@ CREATE TABLE users(
    	password VARCHAR(80),
    	PRIMARY KEY (username)
 );
+CREATE INDEX passwords
+ON users (password);
