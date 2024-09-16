@@ -1,0 +1,175 @@
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+:root {
+  --main-font: "Roboto", sans-serif;
+  --secondary-font: "Open Sans", sans-serif;
+  --body-font: "Open Sans", sans-serif;
+  --main-color: #000000;
+  --secondary-color: #ffffff;
+  --tertiary-color: #222222;
+}
+
+html {
+  font-family: var(--body-font);
+  font-size: 10px;
+  color: var(--main-color);
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fafafaf1;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Main {
+  display: block;
+  min-width: 660px;
+}
+
+.input {
+  display: flex;
+  align-self: center;
+}
+.alert{
+  align-self: center;
+  font-size: large;
+  align-items: center;
+  text-align: center;
+}
+
+.danger {
+  color:Tomato;
+}
+
+.good {
+  color:mediumseagreen
+}
+
+.noFill {
+  color: #cc7700
+}
+
+.button-50 {
+  appearance: button;
+  background-color: #000;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-50:focus {
+  text-decoration: none;
+}
+
+.button-50:hover {
+  text-decoration: none;
+}
+
+.button-50:active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.button-50:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-50 {
+    padding: 12px 50px;
+  }
+}
+form {
+  width: 100%;
+  padding: 40px;
+}
+
+.form-input {
+  width: clamp(100px, 50vw, 420px);
+  height: 40px;
+  padding: 0 20px;
+  color: var(--main-color);
+  font-family: var(--body-font);
+  border: 1px solid var(--tertiary-color);
+  border-radius: 1px 1px 2px 2px;
+  margin: 0 auto 10px auto;
+  transition: all 500ms;
+}
+
+
+.form-input:focus {
+  outline: none;
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+
+.form-label {
+  font-size: 1.4rem;
+  color: rgb(117, 117, 117);
+  display: block;
+
+  transform: translate(2rem,-4rem);
+  transform-origin: 0 0;
+  transition: all 500ms;
+
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+
+  /* THIS PART IS IMPORTANT! */
+  /* This line prevents the label from being selected.*/
+  /* This is crucial because if we want to select the form field,
+     we want to click THROUGH the label. */
+  pointer-events: none;
+}
+
+.form-input::placeholder {
+  display: none;
+  color: transparent;
+
+/* Prevents users from highlighting the placeholder. */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  transform: translateY(-6.75rem) scale(0.8);
+}
+
+.form-input:not(:placeholder-shown) {
+  border-top-color: rgba(0, 0, 0, 0.5);
+}

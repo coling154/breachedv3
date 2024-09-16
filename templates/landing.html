@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../static/styles.css">
+        <link rel="icon" type="image/png" href="../static/favicon.png">
+    </head>
+    <body>
+        <div class="Main">
+            <div class = "input">
+                <h1 id="title" style="border-right-style: solid;border-right-width: 0px;padding-right: 0px;border-bottom-width: 0px;border-bottom-style: solid;padding-bottom: 0px;margin-top: 65px;">Got PWNED?</h1>
+                <div class="container">
+                    <h2 style="margin-left: 40px;">Enter email or password to check if they are in a data breach</h2>
+                    <form method="POST">
+                        <input placeholder="Email or Password" name="value" class="form-input"></input>
+                        <label class="form-label">Email or Password</label>
+
+                        <button class="button-50" type="submit" formaction="/checkEmail">Check Email</button>
+                        <button class="button-50" type="submit" formaction="/checkPass">Check Password</button>
+                    </form>
+                </div>
+            </div>
+            <!---Below handles the flash messages, set by app.py --->
+            <!--The flash messages are the alert messages that inform users the results of their query-->
+            {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert {{category}}">
+                <strong>{{ message }}</strong>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
+    </body>
+</html>
